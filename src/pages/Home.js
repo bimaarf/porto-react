@@ -92,7 +92,10 @@ export const Home = () => {
           </div>
           <div className="md:grid gap-4 grid-cols-3 mt-4">
             {DataCard.map((projectList, index) => (
-              <div key={index} className="card rounded-lg ring-1 ring-gray-800 mx-2 my-4">
+              <div
+                key={index}
+                className="card rounded-lg ring-1 ring-gray-800 mx-2 my-4"
+              >
                 <div className="card-body">
                   <picture>
                     <img

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { NavMenu } from "./NavMenu";
 import axios from "axios";
 import { toast } from "react-toastify";
-import '../App.css'
+import "../App.css";
 export const Navbar = ({ setAuthCheck, authCheck }) => {
   const [loadSubmit, setLoadSubmit] = useState(false);
   const logoutNow = async (e) => {
@@ -35,7 +35,7 @@ export const Navbar = ({ setAuthCheck, authCheck }) => {
             Support
           </a>
         </div>
-        <div className="lg:container lg:mx-auto cursor-pointer">
+        <div className="lg:container lg:mx-auto">
           <a
             href="https://instagram.com/bimaarf_"
             target="__blank"
@@ -54,11 +54,12 @@ export const Navbar = ({ setAuthCheck, authCheck }) => {
               Logout
             </button>
           ) : (
-            <Link to="/auth/login">
-              <a className="hover-underline-animation underline-offset-4 ml-2">
-                <i className="fa fa-user mx-1"></i>
-                Auth
-              </a>
+            <Link
+              to="/auth/login"
+              className="hover-underline-animation underline-offset-4 ml-2"
+            >
+              <i className="fa fa-user mx-1"></i>
+              Auth
             </Link>
           )}
         </div>
