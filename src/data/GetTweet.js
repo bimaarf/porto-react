@@ -6,7 +6,7 @@ const GetTweet = ({ getTweet, index }) => {
       <div
         key={index}
         className={`md:grid grid-cols-[20%_80%] w-full ${
-          index % 3 === 0 ? "my-6" : ""
+          index % 3 === 0 ? "my-10" : ""
         }`}
       >
         <div className="text-gray-500 text-sm hidden md:block -mt-1">

@@ -1,10 +1,15 @@
 import axios from "axios";
 import React, { useEffect } from "react";
+import Image from "react-image-resizer";
 export const Experiences = () => {
   useEffect(() => {
     document.title = "Experiences - bimaarf_";
   });
-
+  const style = {
+    image: {
+      marginTop: "-20px",
+    },
+  };
   return (
     <>
       <div className="xl:container lg:mx-auto p-4 lg:px-60">
@@ -23,13 +28,16 @@ export const Experiences = () => {
               </h1>
               <br />
               <p className="text-gray-500">
-                Team work of 9 people consisting of 2 programmers, 1 UI/UX
-                designer, 2 analysts and 4 document makers
+                Team work 9 orang yang terdiri dari 2 programmer, 1 UI/UX
+                designer, 2 analis dan 4 pembuat dokumen. Website dibuat
+                menggunakan framework Laravel + MDBootstrap dan sedikit suntikan
+                javascript untuk membuat algoritma perhitungan berdasarkan jarak
+                titik ke titik
               </p>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-5 mt-4">
                 <div>
                   <img
-                    className="rounded border-blue-300 h-24 md:h-40 w-full object-cover"
+                    className="rounded border-blue-300 md:h-auto max-w-full object-cover"
                     src={`${axios.defaults.baseURL}image/experiences_image/mitruck-landingpage.png`}
                   />
                   <div className="text-xs md:text-md text-white mt-2">
@@ -40,7 +48,7 @@ export const Experiences = () => {
                 </div>
                 <div>
                   <img
-                    className="rounded border-blue-300 h-24 md:h-40 w-full object-cover"
+                    className="rounded border-blue-300 md:h-auto max-w-full object-cover"
                     src={`${axios.defaults.baseURL}image/experiences_image/mitruck-admin-dashboard.png`}
                   />
                   <div className="text-xs md:text-md text-white mt-2">
@@ -51,7 +59,7 @@ export const Experiences = () => {
                 </div>
                 <div>
                   <img
-                    className="rounded border-blue-300 h-20 md:h-40 w-full object-cover"
+                    className="rounded border-blue-300 md:h-52 w-full object-cover"
                     src={`${axios.defaults.baseURL}image/experiences_image/meeting-1.jpg`}
                   />
                   <div className="text-xs md:text-md text-white mt-2">
@@ -97,7 +105,7 @@ export const Experiences = () => {
               <div className="grid grid-cols-2 md:grid-cols-3 gap-5 mt-4">
                 <div>
                   <img
-                    className="rounded border-blue-300 h-24 md:h-40 w-full object-cover"
+                    className="rounded border-blue-300 md:h-auto w-full object-cover"
                     src={`${axios.defaults.baseURL}image/experiences_image/restani-porto.png`}
                   />
                   <div className="text-xs md:text-md text-white mt-2">
@@ -108,7 +116,7 @@ export const Experiences = () => {
                 </div>
                 <div>
                   <img
-                    className="rounded border-blue-300 h-24 md:h-40 w-full object-cover"
+                    className="rounded border-blue-300 md:h-auto w-full object-cover"
                     src={`${axios.defaults.baseURL}image/experiences_image/restani-chart.png`}
                   />
                   <div className="text-xs md:text-md text-white mt-2">
@@ -119,7 +127,7 @@ export const Experiences = () => {
                 </div>
                 <div>
                   <img
-                    className="rounded border-blue-300 h-24 md:h-40 w-full object-cover"
+                    className="rounded border-blue-300 md:h-auto w-full object-cover"
                     src={`${axios.defaults.baseURL}image/experiences_image/restani-chat.png`}
                   />
                   <div className="text-xs md:text-md text-white mt-2">
@@ -162,7 +170,7 @@ export const Experiences = () => {
               <div className="grid grid-cols-2 md:grid-cols-3 gap-5 mt-4">
                 <div>
                   <img
-                    className="rounded border-blue-300 h-24 md:h-40 w-full object-cover"
+                    className="rounded border-blue-300 md:h-auto w-full object-cover"
                     src={`${axios.defaults.baseURL}image/experiences_image/himatikauntan.png`}
                   />
                   <div className="text-xs md:text-md text-white mt-2">
@@ -209,12 +217,12 @@ export const Experiences = () => {
               <div className="grid grid-cols-2 md:grid-cols-3 gap-5 mt-4">
                 <div>
                   <img
-                    className="rounded border-blue-300 h-24 md:h-40 w-full object-cover"
+                    className="rounded border-blue-300 md:h-auto w-full object-cover"
                     src={`${axios.defaults.baseURL}image/experiences_image/toko.png`}
                   />
                   <div className="text-xs md:text-md text-white mt-2">
                     <div>
-                      <p>Home</p>
+                      <p>Shop - Market</p>
                     </div>
                   </div>
                 </div>

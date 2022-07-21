@@ -21,7 +21,7 @@ export const TweetModal = ({
           tweetGetRequest();
           toast.success("Tweet deleted successfully");
           setLoadSubmit(false);
-          document.getElementById("close-modal").click();
+          document.getElementById("my-modal"+tweetId).click();
         } else {
           toast.error(
             `Injection failed You can't fucking delete this tweet 😡`
@@ -63,7 +63,7 @@ export const TweetModal = ({
               </button>
             )}
             <label
-              id="close-modal"
+              id="close-modal-yay"
               htmlFor={`my-modal${tweetId}`}
               className="btn text-gray-300"
             >
