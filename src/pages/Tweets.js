@@ -23,6 +23,7 @@ const Tweets = () => {
     }, 500);
   };
   useEffect(() => {
+    document.title = "Tweets - bimarf.in";
     tweetGetRequest();
   }, []);
   const tweetGetRequest = async () => {
@@ -98,17 +99,28 @@ const Tweets = () => {
           "Content-Type": "multipart/form-data",
         },
       };
+      if (formInput.tweet[0] === " ") {
+        toast.warning("the first letter cannot be a space");
+        setLoadSubmit(false);
+        return false;
+      }
       axios.get("/sanctum/csrf-cookie").then((res) => {
         axios.post(`api/tweet/store`, data, config).then((res) => {
-          if (res.data.status === 200) {
-            form.current.reset();
-            formInput.tweet = "";
-            setImageFormat(null);
-            setFileInput();
-            toast.success("Successfully added a tweet!");
-            tweetGetRequest();
+          if (formInput.tweet.length < 3) {
+            toast.warning("minimum 3 characters");
+            setLoadSubmit(false);
+          } else {
+            if (res.data.status === 200) {
+              form.current.reset();
+              formInput.tweet = "";
+              setImageFormat(null);
+              setFileInput();
+              toast.success("Successfully added a tweet!");
+              tweetGetRequest();
+            }
           }
           setLoadSubmit(false);
+          console.log(formInput.tweet[0]);
         });
       });
     }
@@ -260,7 +272,11 @@ const Tweets = () => {
           .slice(0, tweetLength)
           .map((getTweet, index) => (
             <div key={index}>
-              <GetTweet getTweet={getTweet} index={index} />
+              <GetTweet
+                tweetGetRequest={tweetGetRequest}
+                getTweet={getTweet}
+                index={index}
+              />
               <TweetModal
                 tweetId={getTweet.id}
                 tweetBody={getTweet.tweet}

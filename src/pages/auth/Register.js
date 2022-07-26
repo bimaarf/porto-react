@@ -101,7 +101,7 @@ export const Register = () => {
   return (
     <>
       <section className="xl:container lg:mx-auto p-4">
-        <div className="px-6 h-screen text-gray-800">
+        <div className="px-6 text-gray-800">
           <div className="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6">
             <div className="grow-0 shrink-1 md:shrink-0 basis-auto xl:w-6/12 lg:w-6/12 md:w-9/12 mb-12 md:mb-0">
               <picture>

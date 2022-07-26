@@ -21,7 +21,7 @@ export const TweetModal = ({
           tweetGetRequest();
           toast.success("Tweet deleted successfully");
           setLoadSubmit(false);
-          document.getElementById("my-modal"+tweetId).click();
+          document.getElementById("my-modal" + tweetId).click();
         } else {
           toast.error(
             `Injection failed You can't fucking delete this tweet 😡`
@@ -46,7 +46,7 @@ export const TweetModal = ({
           <p className="py-4 text-gray-300">{tweetBody}</p>
           {tweetImg && (
             <img
-              className="h-72 w-full object-cover py-2"
+              className="h-96 w-full object-cover py-2"
               alt=""
               src={`${axios.defaults.baseURL}tweets/${tweetImg}`}
             />

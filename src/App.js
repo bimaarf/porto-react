@@ -23,23 +23,25 @@ axios.interceptors.request.use(function (config) {
   return config;
 });
 function App() {
-  const [authCheck, setAuthCheck] = useState()
+  const [authCheck, setAuthCheck] = useState();
   useEffect(() => {
-    if(localStorage.getItem('auth_token')) return setAuthCheck(true)
-    setAuthCheck(false)
-  })
+    if (localStorage.getItem("auth_token")) return setAuthCheck(true);
+    setAuthCheck(false);
+  });
   return (
     <>
       <ToastContainer />
       <Navbar authCheck={authCheck} setAuthCheck={setAuthCheck} />
       <Routes>
-        <Route path="/auth/login" element={<Login setAuthCheck={setAuthCheck} />} />
+        <Route
+          path="/auth/login"
+          element={<Login setAuthCheck={setAuthCheck} />}
+        />
         <Route path="/auth/register" element={<Register />} />
         <Route path="/" element={<Home />} />
         <Route path="/tweets" element={<Tweets />} />
         <Route path="/experiences" element={<Experiences />} />
       </Routes>
-    
     </>
   );
 }

@@ -1,9 +1,10 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import Image from "react-image-resizer";
+import { Link } from "react-router-dom";
 export const Experiences = () => {
   useEffect(() => {
-    document.title = "Experiences - bimaarf_";
+    document.title = "Experiences - bimarf.in";
   });
   const style = {
     image: {
@@ -24,6 +25,50 @@ export const Experiences = () => {
           <div className="border border-y-0 border-r-0 border-l-gray-800 pb-6">
             <div className="md:ml-8 ml-4">
               <h1 className="text-white font-semibold mb-2 -mt-1">
+                bimarf.in - Portfolio
+              </h1>
+              <br />
+              <p className="text-gray-500">
+                Front end web dibuat dengan React Js + Tailwind dan supported by
+                Laravel 8 sebagai backend
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-5 mt-4">
+                <div>
+                  <img
+                    className="rounded border-blue-300 md:h-auto max-w-full object-cover"
+                    src={`${axios.defaults.baseURL}image/experiences_image/portofolio.png`}
+                  />
+                  <div className="text-xs md:text-md text-white mt-2">
+                    <div>
+                      <p>bimarf.in - Projects</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="pt-1 mt-6">
+                <Link
+                  to="/experiences"
+                  className="md:mt-4 py-1 px-2 text-xs rounded-md bg-slate-800 hover:bg-slate-700 duration-500 ease-in-out text-white "
+                >
+                  Read More <i className="fa fa-angle-right"></i>
+                </Link>
+                <Link to="/experiences" className="md:mt-4 py-2 px-4 text-xs text-blue-300">
+                  <span className="text-gray-400 mr-1">or</span>{" "}
+                  <span className="hover-underline-animation underline-offset-4">
+                    View Website <i className="fa fa-angle-right"></i>
+                  </span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="text-white text-sm md:text-md">
+          <div className="text-gray-500  md:block md:-mt-1 -ml-2 md:-ml-3 absolute">
+            <i className="fa fa-circle text-gray-800 text-xl md:text-3xl -mt-2"></i>
+          </div>
+          <div className="border border-y-0 border-r-0 border-l-gray-800 pb-6">
+            <div className="md:ml-8 ml-4">
+              <h1 className="text-white font-semibold mb-2 -mt-1">
                 Magang di PT Mada Jejaring Tenggara - Pontianak Kalimantan Barat
               </h1>
               <br />
@@ -32,7 +77,7 @@ export const Experiences = () => {
                 designer, 2 analis dan 4 pembuat dokumen. Website dibuat
                 menggunakan framework Laravel + MDBootstrap dan sedikit suntikan
                 javascript untuk membuat algoritma perhitungan berdasarkan jarak
-                titik ke titik
+                dari titik ke titik
               </p>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-5 mt-4">
                 <div>
@@ -76,7 +121,7 @@ export const Experiences = () => {
                 >
                   Read More <i className="fa fa-angle-right"></i>
                 </a>
-                <a href="#" className="md:mt-4 py-2 px-4 text-xs text-blue-300">
+                <a href="https://mitruck.mada.co.id" target="__blank" className="md:mt-4 py-2 px-4 text-xs text-blue-300">
                   <span className="text-gray-400 mr-1">or</span>{" "}
                   <span className="hover-underline-animation underline-offset-4">
                     View Website <i className="fa fa-angle-right"></i>
@@ -89,6 +134,7 @@ export const Experiences = () => {
             <p className="text-gray-500">Currently under development!</p>
           </div> */}
         </div>
+
         <div className="text-white text-sm md:text-md">
           <div className="text-gray-500  md:block md:-mt-1 -ml-2 md:-ml-3 absolute">
             <i className="fa fa-circle text-gray-800 text-xl md:text-3xl -mt-2"></i>
@@ -100,12 +146,14 @@ export const Experiences = () => {
               </h1>
               <br />
               <p className="text-gray-500">
-                Freelance work competition business plan and its implementation
+                Freelance work competition business plan and its implementation.
+                Website dibuat dengan framework Laravel 8 + MDBootstrap
               </p>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-5 mt-4">
                 <div>
                   <img
                     className="rounded border-blue-300 md:h-auto w-full object-cover"
+                    alt=""
                     src={`${axios.defaults.baseURL}image/experiences_image/restani-porto.png`}
                   />
                   <div className="text-xs md:text-md text-white mt-2">
@@ -117,6 +165,7 @@ export const Experiences = () => {
                 <div>
                   <img
                     className="rounded border-blue-300 md:h-auto w-full object-cover"
+                    alt=""
                     src={`${axios.defaults.baseURL}image/experiences_image/restani-chart.png`}
                   />
                   <div className="text-xs md:text-md text-white mt-2">
@@ -128,6 +177,7 @@ export const Experiences = () => {
                 <div>
                   <img
                     className="rounded border-blue-300 md:h-auto w-full object-cover"
+                    alt=""
                     src={`${axios.defaults.baseURL}image/experiences_image/restani-chat.png`}
                   />
                   <div className="text-xs md:text-md text-white mt-2">
@@ -136,15 +186,27 @@ export const Experiences = () => {
                     </div>
                   </div>
                 </div>
+                <div>
+                  <img
+                    className="rounded border-blue-300 md:h-auto w-full object-cover"
+                    alt=""
+                    src={`${axios.defaults.baseURL}image/experiences_image/restani-review.png`}
+                  />
+                  <div className="text-xs md:text-md text-white mt-2">
+                    <div>
+                      <p>Restani - Review</p>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className="pt-1 mt-6">
-                <a
-                  href="#"
+                <Link
+                  to="/experiences"
                   className="md:mt-4 py-1 px-2 text-xs rounded-md bg-slate-800 hover:bg-slate-700 duration-500 ease-in-out text-white "
                 >
                   Read More <i className="fa fa-angle-right"></i>
-                </a>
-                <a href="#" className="md:mt-4 py-2 px-4 text-xs text-blue-300">
+                </Link>
+                <a href="https://restani.bimarf.in" target="__blank" className="md:mt-4 py-2 px-4 text-xs text-blue-300">
                   <span className="text-gray-400 mr-1">or</span>{" "}
                   <span className="hover-underline-animation underline-offset-4">
                     View Website <i className="fa fa-angle-right"></i>
@@ -165,7 +227,9 @@ export const Experiences = () => {
               </h1>
               <br />
               <p className="text-gray-500">
-                Website resmi organisasi himpunan mahasiswa matematika untan
+                Website resmi organisasi dari Himpunan Mahasiswa Matematika
+                FMIPA UNTAN. Website dibuat dengan meenggunakan framework
+                Laravel 8
               </p>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-5 mt-4">
                 <div>
@@ -212,7 +276,8 @@ export const Experiences = () => {
               </h1>
               <br />
               <p className="text-gray-500">
-                A private marketplace that sells custom made clothing products
+                A private marketplace that sells custom made clothing products.
+                Website dibuat dengan menggunakan framework Laravel 8
               </p>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-5 mt-4">
                 <div>

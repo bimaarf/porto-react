@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { DataCard } from "../data/DataProject";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { Footer } from "../components/Footer";
 export const Home = () => {
+  useEffect(() => {
+    document.title = 'Home - bimarf.in'
+  })
   return (
     <>
       <div className="dark bg-slate-900 px-2">
@@ -97,13 +100,11 @@ export const Home = () => {
                 className="card rounded-lg ring-1 ring-gray-800 mx-2 my-4"
               >
                 <div className="card-body">
-                  <picture>
-                    <img
-                      src={`${axios.defaults.baseURL}image/${projectList.image}`}
-                      alt=""
-                      className="rounded-lg"
-                    />
-                  </picture>
+                  <img
+                    src={`${axios.defaults.baseURL}image/${projectList.image}`}
+                    alt=""
+                    className="rounded-lg"
+                  />
                   <h3 className="text-slate-900 dark:text-white mt-5 text-base font-medium tracking-tight">
                     {projectList.title}
                   </h3>
@@ -112,15 +113,16 @@ export const Home = () => {
                   </p>
                 </div>
                 <div className="p-4">
-                  <a
-                    href="#"
+                  <Link
+                    to="/experiences"
                     className="md:mt-4 py-1 px-2 text-xs rounded-md bg-slate-800 hover:bg-slate-700 duration-500 ease-in-out text-white "
                   >
                     Read More <i className="fa fa-angle-right"></i>
-                  </a>
+                  </Link>
                   <a
-                    href="#"
-                    className="md:mt-4 py-2 px-4 text-xs text-blue-300"
+                    href={projectList.url}
+                    target={`${projectList.url != null && '__blank'}`}
+                    className="md:mt-4 py-2 px-4 text-xs text-blue-300 cursor-pointer"
                   >
                     <span className="text-gray-400 mr-1">or</span>{" "}
                     <span className="hover-underline-animation underline-offset-4">

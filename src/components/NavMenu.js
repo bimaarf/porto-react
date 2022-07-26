@@ -47,50 +47,50 @@ export const NavMenu = () => {
           </button>
           <Link to="/">
             <h2 className="self-center text-xl whitespace-nowrap dark:text-white cursor-pointer">
-              bima
-              <span className="text-xl dark:text-blue-400">rf.in</span>
+              bim
+              <span className="text-xl dark:text-blue-400">arf.in</span>
             </h2>
           </Link>
           <div className="hidden w-full md:block md:w-auto" id="mobile-menu">
             <ul className="flex flex-col mt-4 md:flex-row md:space-x-4 md:mt-0 md:text-sm md:font-medium">
-              <Link to="/" aria-current="page">
-                <a
-                  className={`
-                  ${
-                    location.pathname === "/"
-                      ? "rounded-lg border-none btn btn-sm capitalize bg-slate-800 text-gray-100 hover:bg-slate-700 duration-500 ease-in-out"
-                      : "rounded-lg border-none btn btn-sm capitalize bg-transparent text-gray-100 hover:bg-slate-700 duration-500 ease-in-out"
-                  }
-                     `}
-                >
-                  Home
-                </a>
+              <Link
+                to="/"
+                aria-current="page"
+                className={`
+              ${
+                location.pathname === "/"
+                  ? "rounded-lg border-none btn btn-sm capitalize bg-slate-800 text-gray-100 hover:bg-slate-700 duration-500 ease-in-out"
+                  : "rounded-lg border-none btn btn-sm capitalize bg-transparent text-gray-100 hover:bg-slate-700 duration-500 ease-in-out"
+              }
+                 `}
+              >
+                Home
               </Link>
-              <Link to="/tweets" aria-current="page">
-                <a
-                  className={`
-                  ${
-                    location.pathname === "/tweets"
-                      ? "rounded-lg border-none btn btn-sm capitalize bg-slate-800 text-gray-100 hover:bg-slate-700 duration-500 ease-in-out"
-                      : "rounded-lg border-none btn btn-sm capitalize bg-transparent text-gray-100 hover:bg-slate-700 duration-500 ease-in-out"
-                  }
-                     `}
-                >
-                  Tweets
-                </a>
+              <Link
+                to="/tweets"
+                aria-current="page"
+                className={`
+               ${
+                 location.pathname === "/tweets"
+                   ? "rounded-lg border-none btn btn-sm capitalize bg-slate-800 text-gray-100 hover:bg-slate-700 duration-500 ease-in-out"
+                   : "rounded-lg border-none btn btn-sm capitalize bg-transparent text-gray-100 hover:bg-slate-700 duration-500 ease-in-out"
+               }
+                  `}
+              >
+                Tweets
               </Link>
-              <Link to="/experiences" aria-current="page">
-                <a
-                  className={`
-                  ${
-                    location.pathname === "/experiences"
-                      ? "rounded-lg border-none btn btn-sm capitalize bg-slate-800 text-gray-100 hover:bg-slate-700 duration-500 ease-in-out"
-                      : "rounded-lg border-none btn btn-sm capitalize bg-transparent text-gray-100 hover:bg-slate-700 duration-500 ease-in-out"
-                  }
-                     `}
-                >
-                  Experiences
-                </a>
+              <Link
+                to="/experiences"
+                aria-current="page"
+                className={`
+              ${
+                location.pathname === "/experiences"
+                  ? "rounded-lg border-none btn btn-sm capitalize bg-slate-800 text-gray-100 hover:bg-slate-700 duration-500 ease-in-out"
+                  : "rounded-lg border-none btn btn-sm capitalize bg-transparent text-gray-100 hover:bg-slate-700 duration-500 ease-in-out"
+              }
+                 `}
+              >
+                Experiences
               </Link>
             </ul>
           </div>
@@ -103,51 +103,48 @@ export const NavMenu = () => {
               "
           >
             <li>
-              <Link to="/">
-                <a
-                  onClick={showSidebar}
-                  className={`
-               ${
-                 location.pathname === "/"
-                   ? "p-2 block bg-gray-800 bg-opacity-30 rounded-lg text-gray-200"
-                   : "p-2 block text-gray-400"
-               }
-                  `}
-                >
-                  Home
-                </a>
+              <Link
+                to="/"
+                onClick={showSidebar}
+                className={`
+           ${
+             location.pathname === "/"
+               ? "p-2 block bg-gray-800 bg-opacity-30 rounded-lg text-gray-200"
+               : "p-2 block text-gray-400"
+           }
+              `}
+              >
+                Home
               </Link>
             </li>
             <li>
-              <Link to="/tweets">
-                <a
-                  onClick={showSidebar}
-                  className={`
-               ${
-                 location.pathname === "/tweets"
-                   ? "p-2 block bg-gray-800 bg-opacity-30 rounded-lg text-gray-200"
-                   : "p-2 block text-gray-400"
-               }
-                  `}
-                >
-                  Tweets
-                </a>
+              <Link
+                to="/tweets"
+                onClick={showSidebar}
+                className={`
+            ${
+              location.pathname === "/tweets"
+                ? "p-2 block bg-gray-800 bg-opacity-30 rounded-lg text-gray-200"
+                : "p-2 block text-gray-400"
+            }
+               `}
+              >
+                Tweets
               </Link>
             </li>
             <li>
-              <Link to="/experiences">
-                <a
-                  onClick={showSidebar}
-                  className={`
-               ${
-                 location.pathname === "/experiences"
-                   ? "p-2 block bg-gray-800 bg-opacity-30 rounded-lg text-gray-200"
-                   : "p-2 block text-gray-400"
-               }
-                  `}
-                >
-                  Experiences
-                </a>
+              <Link
+                to="/experiences"
+                onClick={showSidebar}
+                className={`
+           ${
+             location.pathname === "/experiences"
+               ? "p-2 block bg-gray-800 bg-opacity-30 rounded-lg text-gray-200"
+               : "p-2 block text-gray-400"
+           }
+              `}
+              >
+                Experiences
               </Link>
             </li>
           </ul>
