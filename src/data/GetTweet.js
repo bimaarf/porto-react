@@ -50,20 +50,20 @@ const GetTweet = ({ getTweet, index, tweetGetRequest }) => {
           index % 3 === 0 ? "my-10" : ""
         }`}
       >
-        <div className="text-gray-500 text-sm hidden md:block -mt-1">
+        <div className="text-gray-500 dark:text-gray-500 text-sm hidden md:block -mt-1">
           <i className="fa fa-clock-o"></i>
           <span className="ml-2">{getTweet.created_at}</span>
         </div>
         <div
-          className={`border border-y-0 border-r-0 border-l-gray-800 mt-3.5 pb-6 ${
-            index % 3 === 0 ? "border-b-gray-800 border-b" : ""
+          className={`border border-y-0 border-r-0 border-gray-200 dark:border-l-gray-800 mt-3.5 pb-6 ${
+            index % 3 === 0 ? "border-gray-200 dark:border-b-gray-800 border-b" : ""
           }`}
         >
-          <i className="fa fa-circle-o absolute -mt-3.5 text-gray-500 -ml-2"></i>
+          <i className="fa fa-circle-o absolute -mt-3.5 text-gray-200 dark:text-gray-500 -ml-2"></i>
           <div className="md:ml-8 ml-3">
             <div className="flex justify-between">
               <div className="float-left">
-                <h1 className=" absolute -mt-5 text-gray-300 font-semibold">
+                <h1 className=" absolute -mt-5 text-gray-700 dark:text-gray-300 font-semibold">
                   <i className="fa fa-twitter mr-1"></i>
                   {getTweet.user.name}
                 </h1>
@@ -129,13 +129,13 @@ const GetTweet = ({ getTweet, index, tweetGetRequest }) => {
                     {getTweet.comments.map((comments, index) => (
                       <div
                         key={index}
-                        className="border border-y-0 border-r-0 border-l-gray-800 mt-3.5 pb-6"
+                        className="border border-y-0 border-r-0 border-gray-200 dark:border-l-gray-800 mt-3.5 pb-6"
                       >
                         <i className="fa fa-circle-o absolute -mt-3.5 text-gray-500 -ml-2"></i>
                         <div className="md:ml-4 ml-3">
                           <div className="flex justify-between">
                             <div className="float-left">
-                              <h1 className="-mt-4 text-gray-400 text-sm font-semibold">
+                              <h1 className="-mt-4 text-gray-700 dark:text-gray-400 text-sm font-semibold">
                                 <i className="fa fa-twitter mr-1"></i>
                                 {comments.user.name}
                               </h1>
@@ -177,17 +177,17 @@ const GetTweet = ({ getTweet, index, tweetGetRequest }) => {
                           type="text"
                           name="comment"
                           maxLength={150}
-                          className="block p-2.5 z-20 w-full text-sm text-gray-900 bg-transparent border-l-0 border-t-0 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white outline-none rounded-r-lg border"
+                          className="block p-2.5 z-20 w-full text-sm text-gray-900 bg-transparent border-l-0 border-t-0 border-gray-200 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white outline-none rounded-r-lg border"
                           placeholder="Add comment"
                           required
                         />
                         <button
                           disabled={loadSubmit ? true : false}
                           type="submit"
-                          className={`absolute top-0 right-0 p-2.5 text-sm font-medium text-white  rounded-r-lg border-0 ${
+                          className={`absolute top-0 right-0 p-2.5 text-sm font-medium text-gray-700 dark:text-white  rounded-r-lg border-0 ${
                             loadSubmit
                               ? "duration-200 dark:bg-slate-900 "
-                              : "hover:bg-blue-800 duration-200 dark:hover:bg-blue-700 "
+                              : "hover:bg-blue-300 duration-200 dark:hover:bg-blue-800 "
                           }`}
                         >
                           {loadSubmit ? (

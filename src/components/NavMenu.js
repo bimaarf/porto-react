@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, Link } from "react-router-dom";
+import { BsFillMoonFill, BsCloudSunFill } from "react-icons/bs";
 export const NavMenu = () => {
   const location = useLocation();
   const [isActive, setActive] = useState("false");
@@ -7,9 +8,36 @@ export const NavMenu = () => {
     setActive(!isActive);
   };
 
+  // theme
+  const [theme, setTheme] = useState(null);
+  useEffect(() => {
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  }, []);
+
+  const changeTheme = (e) => {
+    e.preventDefault();
+    if (theme === "dark") {
+      setTheme("light");
+    } else {
+      setTheme("dark");
+    }
+  };
+
+  useEffect(() => {
+    if (theme === "dark") {
+      window.document.documentElement.classList.add("dark");
+    } else {
+      window.document.documentElement.classList.remove("dark");
+    }
+  }, [changeTheme]);
+
   return (
     <>
-      <nav className="px-4 z-50 sm:px-4 backdrop-filter backdrop-blur-lg py-4 sticky top-0 [other classes here] dark:border-gray-800 border-b font-semibold">
+      <nav className="px-4 z-50 sm:px-4 dark:backdrop-filter dark:backdrop-blur-lg bg-white dark:bg-transparent py-4 sticky top-0 [other classes here] border-gray-200 dark:border-gray-800 border-b font-semibold">
         <div className="lg:container lg:px-60 flex flex-wrap gap-4 items-center mx-auto">
           <button
             onClick={showSidebar}
@@ -46,7 +74,7 @@ export const NavMenu = () => {
             </svg>
           </button>
           <Link to="/">
-            <h2 className="self-center text-xl whitespace-nowrap dark:text-white cursor-pointer">
+            <h2 className="self-center text-xl whitespace-nowrap text-gray-700 dark:text-white cursor-pointer font-bold">
               bim
               <span className="text-xl dark:text-blue-400">arf.in</span>
             </h2>
@@ -59,8 +87,8 @@ export const NavMenu = () => {
                 className={`
               ${
                 location.pathname === "/"
-                  ? "rounded-lg border-none btn btn-sm capitalize bg-slate-800 text-gray-100 hover:bg-slate-700 duration-500 ease-in-out"
-                  : "rounded-lg border-none btn btn-sm capitalize bg-transparent text-gray-100 hover:bg-slate-700 duration-500 ease-in-out"
+                  ? "rounded-lg border-none btn btn-sm capitalize bg-gray-300 dark:bg-slate-800 text-gray-700 dark:text-gray-100 hover:bg-slate-300 dark:hover:bg-slate-700 duration-500 ease-in-out font-semibold"
+                  : "rounded-lg border-none btn btn-sm capitalize bg-transparent text-gray-700 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-slate-700 duration-500 ease-in-out"
               }
                  `}
               >
@@ -72,8 +100,8 @@ export const NavMenu = () => {
                 className={`
                ${
                  location.pathname === "/tweets"
-                   ? "rounded-lg border-none btn btn-sm capitalize bg-slate-800 text-gray-100 hover:bg-slate-700 duration-500 ease-in-out"
-                   : "rounded-lg border-none btn btn-sm capitalize bg-transparent text-gray-100 hover:bg-slate-700 duration-500 ease-in-out"
+                   ? "rounded-lg border-none btn btn-sm capitalize bg-gray-300 dark:bg-slate-800 text-gray-700 dark:text-gray-100 hover:bg-slate-300 dark:hover:bg-slate-700 duration-500 ease-in-out font-semibold"
+                   : "rounded-lg border-none btn btn-sm capitalize bg-transparent text-gray-700 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-slate-700 duration-500 ease-in-out"
                }
                   `}
               >
@@ -85,8 +113,8 @@ export const NavMenu = () => {
                 className={`
               ${
                 location.pathname === "/experiences"
-                  ? "rounded-lg border-none btn btn-sm capitalize bg-slate-800 text-gray-100 hover:bg-slate-700 duration-500 ease-in-out"
-                  : "rounded-lg border-none btn btn-sm capitalize bg-transparent text-gray-100 hover:bg-slate-700 duration-500 ease-in-out"
+                  ? "rounded-lg border-none btn btn-sm capitalize bg-gray-300 dark:bg-slate-800 text-gray-700 dark:text-gray-100 hover:bg-slate-300 dark:hover:bg-slate-700 duration-500 ease-in-out font-semibold"
+                  : "rounded-lg border-none btn btn-sm capitalize bg-transparent text-gray-700 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-slate-700 duration-500 ease-in-out"
               }
                  `}
               >
@@ -94,6 +122,10 @@ export const NavMenu = () => {
               </Link>
             </ul>
           </div>
+          {/* toggle theme */}
+          <button className="text-yellow-300" onClick={changeTheme}>
+            {theme === "dark" ? <BsFillMoonFill /> : <BsCloudSunFill />}
+          </button>
         </div>
         {/* mobile - nav */}
         <div className={!isActive ? "md:hidden mt-4" : "hidden"}>
@@ -109,8 +141,8 @@ export const NavMenu = () => {
                 className={`
            ${
              location.pathname === "/"
-               ? "p-2 block bg-gray-800 bg-opacity-30 rounded-lg text-gray-200"
-               : "p-2 block text-gray-400"
+               ? "p-2 block bg-gray-100 dark:bg-gray-800 dark:bg-opacity-30 rounded-lg text-gray-700 dark:text-gray-200"
+               : "p-2 block text-gray-700 dark:text-gray-400"
            }
               `}
               >
@@ -124,8 +156,8 @@ export const NavMenu = () => {
                 className={`
             ${
               location.pathname === "/tweets"
-                ? "p-2 block bg-gray-800 bg-opacity-30 rounded-lg text-gray-200"
-                : "p-2 block text-gray-400"
+                ? "p-2 block bg-gray-100 dark:bg-gray-800 dark:bg-opacity-30 rounded-lg text-gray-700 dark:text-gray-200"
+                : "p-2 block text-gray-700 dark:text-gray-400"
             }
                `}
               >
@@ -139,8 +171,8 @@ export const NavMenu = () => {
                 className={`
            ${
              location.pathname === "/experiences"
-               ? "p-2 block bg-gray-800 bg-opacity-30 rounded-lg text-gray-200"
-               : "p-2 block text-gray-400"
+               ? "p-2 block bg-gray-100 dark:bg-gray-800 dark:bg-opacity-30 rounded-lg text-gray-700 dark:text-gray-200"
+               : "p-2 block text-gray-700 dark:text-gray-400"
            }
               `}
               >

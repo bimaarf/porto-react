@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  darkMode: "class",
   theme: {
-    darkMode: "class",
     container: {
       padding: {
         default: "1rem",
@@ -13,12 +13,12 @@ module.exports = {
     },
     extend: {
       colors: {
-        'regal-blue': '#243c5a',
+        "regal-blue": "#243c5a",
       },
     },
   },
   plugins: [require("daisyui")],
   daisyui: {
-    base: false
-  }
+    base: false,
+  },
 };

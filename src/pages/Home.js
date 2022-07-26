@@ -5,13 +5,13 @@ import axios from "axios";
 import { Footer } from "../components/Footer";
 export const Home = () => {
   useEffect(() => {
-    document.title = 'Home - bimarf.in'
-  })
+    document.title = "Home - bimarf.in";
+  });
   return (
     <>
-      <div className="dark bg-slate-900 px-2">
+      <div className="px-2">
         <div className="lg:container lg:mx-auto">
-          <div className="my-4 text-white text-center">
+          <div className="my-4 text-gray-700 dark:text-white  text-center">
             <h6 className="text-sm">
               Hello World!, I&apos;m
               <a
@@ -22,7 +22,7 @@ export const Home = () => {
                 @bimaarf_
               </a>
             </h6>
-            <p className="text-xs text-gray-500 px-2">
+            <p className="text-xs text-gray-500 dark:text-gray-500 px-2">
               My project history, starting from personal projects, during
               internships or work, etc.
             </p>
@@ -39,21 +39,21 @@ export const Home = () => {
           <ul className="md:flex text-center md:justify-center md:gap-4">
             <li className="mt-6 ">
               <Link to="/">
-                <button className="py-3 px-20 w-full md:w-auto font-semibold rounded-lg duration-500 md:mt-0 bg-blue-500 text-gray-900 hover:bg-gray-700 hover:text-white">
+                <button className="py-3 px-20 w-full md:w-auto font-semibold rounded-lg duration-500 md:mt-0 bg-gray-700 text-white dark:bg-blue-500 dark:text-gray-900 bg-gray-700 dark:hover:text-white">
                   Say &quot;Hi!&quot; to Me!👋
                 </button>
               </Link>
             </li>
             <li className="mt-6">
               <Link to="/tweets">
-                <button className="py-3 px-20 w-full md:w-auto rounded-lg duration-500 md:mt-0 bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white">
+                <button className="py-3 px-20 w-full md:w-auto rounded-lg duration-500 md:mt-0 bg-white border dark:border-0 dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 font-semibold dark:text-gray-300 hover:text-gray-700 dark:hover:text-white">
                   Read My Tweets 📃
                 </button>
               </Link>
             </li>
             <li className="mt-6 ">
               <a href="https://www.instagram.com/bimaarf_/" target="__blank">
-                <button className="py-3 px-20 w-full md:w-auto rounded-lg duration-500 md:mt-0 bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white">
+                <button className="py-3 px-20 w-full md:w-auto rounded-lg duration-500 md:mt-0 bg-white border dark:border-0 dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 font-semibold dark:text-gray-300 hover:text-gray-700 dark:hover:text-white">
                   <i className="fa fa-instagram"></i> bimaarf_
                 </button>
               </a>
@@ -89,7 +89,7 @@ export const Home = () => {
               />
             </picture>
           </div>
-          <div className="text-white md:text-2xl flex items-center space-x-2 my-4">
+          <div className="text-gray-700 dark:text-white md:text-2xl flex items-center space-x-2 my-4">
             <i className="fa fa-laptop"></i>
             <p className="font-bold ">My Projects</p>
           </div>
@@ -97,7 +97,7 @@ export const Home = () => {
             {DataCard.map((projectList, index) => (
               <div
                 key={index}
-                className="card rounded-lg ring-1 ring-gray-800 mx-2 my-4"
+                className="card rounded-lg ring-1 ring-gray-200 dark:ring-gray-800 mx-2 my-4"
               >
                 <div className="card-body">
                   <img
@@ -115,18 +115,18 @@ export const Home = () => {
                 <div className="p-4">
                   <Link
                     to="/experiences"
-                    className="md:mt-4 py-1 px-2 text-xs rounded-md bg-slate-800 hover:bg-slate-700 duration-500 ease-in-out text-white "
+                    className="md:mt-4 py-1 px-2 text-xs rounded-md bg-gray-200 text-gray-900 hover:bg-gray-300 dark:bg-slate-800 dark:hover:bg-slate-700 duration-500 ease-in-out dark:text-white "
                   >
                     Read More <i className="fa fa-angle-right"></i>
                   </Link>
                   <a
                     href={projectList.url}
-                    target={`${projectList.url != null && '__blank'}`}
+                    target={`${projectList.url != null && "__blank"}`}
                     className="md:mt-4 py-2 px-4 text-xs text-blue-300 cursor-pointer"
                   >
                     <span className="text-gray-400 mr-1">or</span>{" "}
                     <span className="hover-underline-animation underline-offset-4">
-                      View Website<i className="fa fa-angle-right"></i>
+                      View Website<i className="fa fa-angle-right ml-1"></i>
                     </span>
                   </a>
                 </div>

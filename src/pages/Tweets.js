@@ -129,14 +129,14 @@ const Tweets = () => {
   return (
     <>
       <div className="lg:container lg:mx-auto p-4 lg:px-60">
-        <div className="my-4 text-white text-center">
+        <div className="my-4 text-gray-700 dark:text-white text-center">
           <h1 className="mt-4 text-2xl md:text-4xl font-bold">
             My Tweets and Opinions
           </h1>
           <p className="text-gray-500">My random thoughts about anything</p>
         </div>
         <div className="flex justify-between">
-          <div className="text-white md:text-2xl flex items-center space-x-2 my-4">
+          <div className="text-gray-700 dark:text-white md:text-2xl flex items-center space-x-2 my-4">
             <i className="fa fa-book"></i>
             <p className="font-bold">My Tweets</p>
           </div>
@@ -149,7 +149,7 @@ const Tweets = () => {
             ></i>
             <button
               onClick={handleShowForm}
-              className="font-semibold bg-blue-800 p-2 rounded-lg"
+              className="font-semibold bg-blue-600 hover:bg-blue-800 dark:bg-blue-800 p-2 rounded-lg"
             >
               {showTweetForm ? "Hidden Form" : "Show Form"}
             </button>
@@ -193,11 +193,11 @@ const Tweets = () => {
                 </picture>
               </div>
             </div>
-            <div className="flex justify-between items-center py-2 px-3 border-t dark:border-gray-600">
+            <div className="flex justify-between items-center py-2 px-3 border-t border-gray-200 dark:border-gray-600">
               <button
                 disabled={loadSubmit ? true : false}
                 type="submit"
-                className="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800"
+                className="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-600 dark:bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800"
               >
                 <FaTwitter className="mr-1" />
                 {loadSubmit ? (
@@ -288,7 +288,7 @@ const Tweets = () => {
             </div>
           ))}
         {tweetLength >= allDataLength ? (
-          <div className="outline-dotted outline-gray-800 outline-1 p-4 text-center">
+          <div className="outline-dotted outline-gray-200 dark:outline-gray-800 outline-1 p-4 text-center mt-4">
             <p className="text-gray-500">No more tweets!</p>
           </div>
         ) : (

@@ -114,11 +114,11 @@ export const Register = () => {
             </div>
             <div className="xl:ml-20 xl:w-5/12 lg:w-5/12 md:w-8/12 mb-12 w-full md:mb-0">
               <form onSubmit={regisNow}>
-                <p className="text-lg mb-0 mr-4 text-gray-300 text-bold">
+                <p className="text-lg mb-0 mr-4 text-gray-700 dark:text-gray-300 text-bold">
                   Sign up
                 </p>
                 <div className="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
-                  <p className="text-center text-gray-300 mx-4 mb-0">
+                  <p className="text-center text-gray-500 dark:text-gray-300 mx-4 mb-0">
                     Scroll up
                   </p>
                 </div>
@@ -278,7 +278,7 @@ export const Register = () => {
                     checkPassword.length < 6 ||
                     emailValidator === "Enter valid email!"
                       ? "bg-blue-800"
-                      : "dark:bg-blue-600 bg-blue-700 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                      : "dark:bg-blue-600 bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                   } `}
                   disabled={
                     loadSubmit ||
