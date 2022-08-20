@@ -87,7 +87,7 @@ const GetTweet = ({ getTweet, index, tweetGetRequest }) => {
               {getTweet.image ? (
                 <picture>
                   <img
-                    className="p-1 max-h-96 w-full md:w-auto object-cover"
+                    className="p-1 w-full md:w-auto object-cover"
                     src={`${axios.defaults.baseURL}tweets/${getTweet.image}`}
                     alt=""
                   />

@@ -3,37 +3,25 @@ import { useLocation, Link } from "react-router-dom";
 import { BsFillMoonFill, BsCloudSunFill } from "react-icons/bs";
 export const NavMenu = () => {
   const location = useLocation();
-  const [isActive, setActive] = useState("false");
+  const [isActive, setActive] = useState(null);
   const showSidebar = () => {
     setActive(!isActive);
   };
-
-  // theme
-  const [theme, setTheme] = useState(null);
+  const [theme, setTheme] = useState("dark");
   useEffect(() => {
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setTheme("dark");
-    } else {
-      setTheme("light");
-    }
+    setTheme(theme === "dark" ? "dark" : "light");
   }, []);
 
-  const changeTheme = (e) => {
-    e.preventDefault();
-    if (theme === "dark") {
-      setTheme("light");
-    } else {
-      setTheme("dark");
-    }
-  };
-
   useEffect(() => {
     if (theme === "dark") {
-      window.document.documentElement.classList.add("dark");
+      document.documentElement.classList.add("dark");
     } else {
-      window.document.documentElement.classList.remove("dark");
+      document.documentElement.classList.remove("dark");
     }
-  }, [changeTheme]);
+  });
+  const changeTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
 
   return (
     <>
@@ -75,8 +63,8 @@ export const NavMenu = () => {
           </button>
           <Link to="/">
             <h2 className="self-center text-xl whitespace-nowrap text-gray-700 dark:text-white cursor-pointer font-bold">
-              bim
-              <span className="text-xl dark:text-blue-400">arf.in</span>
+              bimarf
+              <span className="text-xl dark:text-blue-400">.in</span>
             </h2>
           </Link>
           <div className="hidden w-full md:block md:w-auto" id="mobile-menu">
@@ -128,7 +116,7 @@ export const NavMenu = () => {
           </button>
         </div>
         {/* mobile - nav */}
-        <div className={!isActive ? "md:hidden mt-4" : "hidden"}>
+        <div className={isActive ? "md:hidden mt-4" : "hidden"}>
           <ul
             className="
               text-base text-gray-300

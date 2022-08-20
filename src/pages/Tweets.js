@@ -55,7 +55,7 @@ const Tweets = () => {
   const handleInputFile = (e) => {
     const file = e.target.files[0];
 
-    if (!file.name.match(/\.(jpg|jpeg|png|gif)$/)) {
+    if (!file.name.match(/\.(jpg|jpeg|png|webp|gif)$/)) {
       toast.error("Image format does not match!");
       setImageFormat(null);
     } else {
@@ -248,6 +248,7 @@ const Tweets = () => {
                   <input
                     type="file"
                     name="image"
+                    accept="image/*"
                     id="file-input"
                     onChange={handleInputFile}
                     value={handleInputFile.fileInput}

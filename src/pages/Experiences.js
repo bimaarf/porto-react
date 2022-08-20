@@ -25,12 +25,58 @@ export const Experiences = () => {
           <div className="border border-y-0 border-r-0 border-gray-200 dark:border-l-gray-800 pb-6">
             <div className="md:ml-8 ml-4">
               <h1 className="text-gray-700 dark:text-white font-semibold mb-2 -mt-1">
-                bimarf.in - Portfolio
+                Free CV-Builder
               </h1>
               <br />
               <p className="text-gray-500">
-                Front end web dibuat dengan React Js + Tailwind dan supported by
-                Laravel 8 sebagai backend
+                Website membuat CV Online Gratis dengan React Js + Tailwind CSS
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-5 mt-4">
+                <div>
+                  <img
+                    className="rounded border-blue-300 md:h-auto max-w-full object-cover"
+                    src={`${axios.defaults.baseURL}image/experiences_image/cv-builder.png`}
+                  />
+                  <div className="text-xs md:text-md text-gray-500 dark:text-white mt-2">
+                    <div>
+                      <p>CV-Builder</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="pt-1 mt-6">
+                <Link
+                  to="/experiences"
+                  className="md:mt-4 py-1 px-2 text-xs rounded-md bg-gray-200 hover:bg-gray-300 text-gray-700 dark:bg-slate-800 dark:hover:bg-slate-700 duration-500 ease-in-out dark:text-white "
+                >
+                  Read More <i className="fa fa-angle-right"></i>
+                </Link>
+                <Link
+                  to="/experiences"
+                  className="md:mt-4 py-2 px-4 text-xs text-blue-300"
+                >
+                  <span className="text-gray-400 mr-1">or</span>{" "}
+                  <a href="https://cv-builder.bimarf.in" target="__blank" className="hover-underline-animation underline-offset-4">
+                    View Website <i className="fa fa-angle-right"></i>
+                  </a>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="text-white text-sm md:text-md">
+          <div className="text-gray-500  md:block md:-mt-1 -ml-2 md:-ml-3 absolute">
+            <i className="fa fa-circle text-gray-200 border-gray-200 dark:text-gray-800 text-xl md:text-3xl -mt-2"></i>
+          </div>
+          <div className="border border-y-0 border-r-0 border-gray-200 dark:border-l-gray-800 pb-6">
+            <div className="md:ml-8 ml-4">
+              <h1 className="text-gray-700 dark:text-white font-semibold mb-2 -mt-1">
+                Portofolio - Bima Arifa
+              </h1>
+              <br />
+              <p className="text-gray-500">
+                Bima Arifa Personal Portfolio Website, Blog, Project Showcase,
+                and My Experience History.
               </p>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-5 mt-4">
                 <div>

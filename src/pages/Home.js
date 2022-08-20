@@ -69,9 +69,9 @@ export const Home = () => {
             </picture>
             <picture>
               <img
-                src="https://uxwing.com/wp-content/themes/uxwing/download/10-brands-and-social-media/bootstrap-5-logo.png"
+                src="https://avatars.githubusercontent.com/u/2918581?s=280&v=4"
                 alt=""
-                className="h-10"
+                className="h-10 rounded-lg"
               />
             </picture>
             <picture>
@@ -94,7 +94,7 @@ export const Home = () => {
             <p className="font-bold ">My Projects</p>
           </div>
           <div className="md:grid gap-4 grid-cols-3 mt-4">
-            {DataCard.map((projectList, index) => (
+            {DataCard.sort((b, a) => a.id - b.id).map((projectList, index) => (
               <div
                 key={index}
                 className="card rounded-lg ring-1 ring-gray-200 dark:ring-gray-800 mx-2 my-4"

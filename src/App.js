@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import {  Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Navbar } from "./components/Navbar";
 import { Home } from "./pages/Home";
@@ -10,8 +10,8 @@ import { Register } from "./pages/auth/Register";
 import Tweets from "./pages/Tweets";
 import { Experiences } from "./pages/Experiences";
 // -----------------------------
-// axios.defaults.baseURL = "https://api-porto.bimarf.in/";
-axios.defaults.baseURL = "http://localhost:8000/";
+axios.defaults.baseURL = "https://api-porto.bimarf.in/";
+// axios.defaults.baseURL = "http://localhost:8000/";
 axios.defaults.headers.post["Accept"] = "application/json";
 axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
 axios.defaults.headers.post["Content-Type"] =

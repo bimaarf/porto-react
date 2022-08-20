@@ -46,7 +46,7 @@ export const TweetModal = ({
           <p className="py-4 text-gray-300">{tweetBody}</p>
           {tweetImg && (
             <img
-              className="h-96 w-full object-cover py-2"
+              className="w-full object-cover py-2"
               alt=""
               src={`${axios.defaults.baseURL}tweets/${tweetImg}`}
             />

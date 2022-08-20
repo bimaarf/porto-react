@@ -19,7 +19,7 @@ export const Navbar = ({ setAuthCheck, authCheck }) => {
 
   return (
     <>
-      <div className="bg-blue-100 dark:bg-blue-300 text-center text-sm md:text-md font-bold md:py-4">
+      <div className="bg-blue-100 dark:bg-blue-300 text-center text-sm md:text-md font-bold py-1 md:py-3">
         <span className="text-gray-800">
           Hai~ i have a new look! What do you think? ☺️
         </span>
@@ -31,9 +31,17 @@ export const Navbar = ({ setAuthCheck, authCheck }) => {
             target="__blank"
             className="hover-underline-animation underline-offset-4"
           >
-            <i className="fa fa-link mr-1"></i>
+            <i className="fa fa-heart-o mr-1"></i>
             Support
           </a>
+        <a
+          href="https://cv-builder.bimarf.in"
+          target="__blank"
+          className="hover-underline-animation underline-offset-4 ml-2"
+        >
+          <i className="fa fa-link mr-1"></i>
+          CV-Builder
+        </a>
         </div>
         <div className="lg:container lg:mx-auto">
           <a
