@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useEffect } from "react";
-import Image from "react-image-resizer";
 import { Link } from "react-router-dom";
 export const Experiences = () => {
   useEffect(() => {

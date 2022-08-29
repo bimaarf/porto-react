@@ -41,7 +41,7 @@ export const Login = ({ setAuthCheck }) => {
       password: loginInput.password,
     };
 
-    await axios.get("/sanctum/csrf-cookie").then((res) => {
+    await axios.get(`${process.env.API_URL}sanctum/csrf-cookie`).then((res) => {
       axios.post(`api/login`, data).then((res) => {
         if (res.data.status === 200) {
           setAuthCheck(true);
@@ -70,12 +70,9 @@ export const Login = ({ setAuthCheck }) => {
       });
     });
   };
-  const ceck = () => {
-    console.log("tes");
-    toast.success(`Hi, I am a toast!`);
-  };
   return (
     <>
+      <h1 className="text-white">asd {process.env.REACT_APP_API}</h1>
       <section className="xl:container lg:mx-auto p-4">
         <div className="px-6 text-gray-800">
           <div className="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6">
@@ -90,10 +87,7 @@ export const Login = ({ setAuthCheck }) => {
             </div>
             <div className="xl:ml-20 xl:w-5/12 lg:w-5/12 md:w-8/12 mb-12 w-full md:mb-0">
               <form onSubmit={loginSubmit}>
-                <p
-                  className="text-lg mb-0 mr-4 text-gray-700 dark:text-gray-300 text-bold"
-                  onClick={ceck}
-                >
+                <p className="text-lg mb-0 mr-4 text-gray-700 dark:text-gray-300 text-bold">
                   Sign in
                 </p>
                 <div className="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">

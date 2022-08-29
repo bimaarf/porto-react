@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {  Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Navbar } from "./components/Navbar";
@@ -11,7 +11,7 @@ import Tweets from "./pages/Tweets";
 import { Experiences } from "./pages/Experiences";
 // -----------------------------
 axios.defaults.baseURL = "https://api-porto.bimarf.in/";
-// axios.defaults.baseURL = "http://localhost:8000/";
+// axios.defaults.baseURL = process.env.API_URL;
 axios.defaults.headers.post["Accept"] = "application/json";
 axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
 axios.defaults.headers.post["Content-Type"] =
@@ -31,17 +31,19 @@ function App() {
   return (
     <>
       <ToastContainer />
-      <Navbar authCheck={authCheck} setAuthCheck={setAuthCheck} />
-      <Routes>
-        <Route
-          path="/auth/login"
-          element={<Login setAuthCheck={setAuthCheck} />}
-        />
-        <Route path="/auth/register" element={<Register />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/tweets" element={<Tweets />} />
-        <Route path="/experiences" element={<Experiences />} />
-      </Routes>
+      <Router>
+        <Navbar authCheck={authCheck} setAuthCheck={setAuthCheck} />
+        <Routes>
+          <Route
+            path="/auth/login"
+            element={<Login setAuthCheck={setAuthCheck} />}
+          />
+          <Route path="/auth/register" element={<Register />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/tweets" element={<Tweets />} />
+          <Route path="/experiences" element={<Experiences />} />
+        </Routes>
+      </Router>
     </>
   );
 }
