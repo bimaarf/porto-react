@@ -3,7 +3,7 @@ import validator from "validator";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-export const Register = () => {
+export const Register = ({ setAuthCheck }) => {
   const navRedirect = useNavigate();
   const [loadSubmit, setLoadSubmit] = useState(false);
   const [emailValidator, setEmailValidator] = useState("");
@@ -51,6 +51,7 @@ export const Register = () => {
       axios.get("/sanctum/csrf-cookie").then((res) => {
         axios.post(`api/register`, data).then((res) => {
           if (res.data.status === 200) {
+            setAuthCheck(true);
             toast.success(
               "Successfully register you will be redirected to the home page!"
             );

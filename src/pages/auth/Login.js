@@ -41,7 +41,7 @@ export const Login = ({ setAuthCheck }) => {
       password: loginInput.password,
     };
 
-    await axios.get(`${process.env.API_URL}sanctum/csrf-cookie`).then((res) => {
+    await axios.get("sanctum/csrf-cookie").then((res) => {
       axios.post(`api/login`, data).then((res) => {
         if (res.data.status === 200) {
           setAuthCheck(true);
@@ -72,7 +72,6 @@ export const Login = ({ setAuthCheck }) => {
   };
   return (
     <>
-      <h1 className="text-white">asd {process.env.REACT_APP_API}</h1>
       <section className="xl:container lg:mx-auto p-4">
         <div className="px-6 text-gray-800">
           <div className="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6">

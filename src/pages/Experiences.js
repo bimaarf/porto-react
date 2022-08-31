@@ -5,11 +5,7 @@ export const Experiences = () => {
   useEffect(() => {
     document.title = "Experiences - bimarf.in";
   });
-  const style = {
-    image: {
-      marginTop: "-20px",
-    },
-  };
+
   return (
     <>
       <div className="xl:container lg:mx-auto p-4 lg:px-60">

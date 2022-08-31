@@ -10,7 +10,7 @@ import { Register } from "./pages/auth/Register";
 import Tweets from "./pages/Tweets";
 import { Experiences } from "./pages/Experiences";
 // -----------------------------
-axios.defaults.baseURL = "https://api-porto.bimarf.in/";
+axios.defaults.baseURL = process.env.REACT_APP_API;
 // axios.defaults.baseURL = process.env.API_URL;
 axios.defaults.headers.post["Accept"] = "application/json";
 axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
@@ -38,7 +38,10 @@ function App() {
             path="/auth/login"
             element={<Login setAuthCheck={setAuthCheck} />}
           />
-          <Route path="/auth/register" element={<Register />} />
+          <Route
+            path="/auth/register"
+            element={<Register setAuthCheck={setAuthCheck} />}
+          />
           <Route path="/" element={<Home />} />
           <Route path="/tweets" element={<Tweets />} />
           <Route path="/experiences" element={<Experiences />} />
